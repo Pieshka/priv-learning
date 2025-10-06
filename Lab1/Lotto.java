@@ -7,7 +7,7 @@ public class Lotto
     {
         HashSet<Integer> set = new HashSet<>();
         Random rand = new Random();
-        for (int i = 0; i < 6; i++)
+        while(set.size() < 6)
         {
             set.add(rand.nextInt(1,50));
         }
