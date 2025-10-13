@@ -11,13 +11,20 @@ public class Lotto
             System.exit(1);
         }
 
+        for(int i = 0; i < args.length; i++)
+            if(!(1 <= Integer.parseInt(args[i]) && Integer.parseInt(args[i]) <= 49))
+            {
+                System.out.println("Liczba na pozycji " + (i+1) + " nie jest z przedziału 1-49!");
+                System.exit(1);
+            }
+
         ArrayList<Integer> userNumbers = new ArrayList<>();
         for (String arg : args) userNumbers.add(Integer.parseInt(arg));
         ArrayList<Integer> numbers = new ArrayList<>();
         Random rand = new Random();
         while(numbers.size() < 6)
         {
-            int nextRandom = rand.nextInt(1,49);
+            int nextRandom = rand.nextInt(1,50);
             if (!numbers.contains(nextRandom))
                 numbers.add(nextRandom);
         }
